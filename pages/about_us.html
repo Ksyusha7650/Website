@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 1</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style_main.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <h1 class="main-title"><a  href="main.html">Рецепты Машули</a> </h1>
+        <nav class="menu_top">
+            <form class="menu_link_top">
+                <input type="text" placeholder="Найти рецепт"></input>
+                <button class="menu_link_top button_search">
+                    <img class="button_search" src="../resources/img/search.png" title="Найти">
+                </button>
+            </form>
+            <a class="menu_link_top" href="login.html">
+                <img class="href_img" src="../resources/img/user.png" title="Вход">
+            </a>
+            <a class="menu_link_top" href="">
+                <img class="href_img" src="../resources/img/heart.png" title="Избранное">
+            </a>
+            <a class="menu_link_top" href="">
+                <img class="href_img" src="../resources/img/question.png" title="О нас">
+            </a>
+        </nav>
+    </div>
+    <hr class="hr_second">
+    <nav class="menu">
+        <div class="dropdown">
+            <button class="menu_link">Ингредиенты </button>
+                <div class="dropdown-content">
+                    <a href="../pages/recepies/meat/recepy_meat.html">Мясо</a>
+                    <a href="#">Курица</a>
+                    <a href="#">Рыба</a>
+                    <a href="../pages/recepies/meat/recepy_mushroom.html">Грибы</a>
+                    <a href="#">Овощи</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <button class="menu_link">Прием пищи</button>
+                <div class="dropdown-content">
+                    <a href="#">Основное блюдо</a>
+                    <a href="../pages/recepies/soups/recepy_soups.html">Супы</a>
+                    <a href="#">Закуски</a>
+                </div>
+        </div>
+        <div class="dropdown">
+        <button class="menu_link">Десерты</button>
+        <div class="dropdown-content">
+      <a href="recepies/desserts/recepy_cookies.html">Печенье</a>
+      <a href="#">Торт</a>
+      <a href="#">Пирожное</a>
+        </div>
+    </div>
+        <button class="menu_link">Праздники</button>
+        <button class="menu_link">Здоровое питание</button>
+        <button class="menu_link">
+            <a href="../pages/recepies/cofee/recepy1.html"><b>Кофе</b></a>
+        </button>
+    </nav>
+    <hr class="hr_first">
+    <div class="main_info">
+        <div class="masha">
+            <video controls="controls" preload="auto" autoplay muted loop>
+                <source src="../resources/video/cooking.mp4" type="video/mp4">
+            </video>
+            <p>Наш поваренок готовит</p>
+        </div>
+        <div>
+            <h2>О нас</h2>
+            <p>Пока у нас один всего лишь поваренок - Машка. Но ты тоже можещь стать одним(/-ой) из нас!</p>
+            <p>Регистрируйся и добавляй/оценивай рецепты, пиши отзывы, тогда мы тебя обязательно отметим!</p>
+            <p><b>Ждем!!!</b></p>
+            <div class="tigers">
+                <img src="../resources/img/tiger2.jpg">
+                <img src="../resources/img/tiger2.jpg">
+                <img src="../resources/img/tiger2.jpg">
+                <img src="../resources/img/tiger2.jpg">
+                <img src="../resources/img/tiger2.jpg">
+            </div>
+            <h4>Мы работаем за идею, но если ты хочешь нас поддержать, мы будем только за! 👉👈</h4>
+            <p>Введи сумму, которую готов пожертвовать: 🥲</p>
+            <div class="input_and_submit">
+                <input type="number" min="1" max="1000000000" value="100000">
+                <button type="submit">Перевести</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>@ 2023 Masha's corp.</p>
+        <div class="footer_vk">
+            <button href="https://vk.com/modesthedgehog">
+                <img src="../resources/img/vk.png">
+            </button>
+            <div>
+                <a href="https://vk.com/modesthedgehog">Машулин ВК</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

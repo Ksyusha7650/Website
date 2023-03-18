@@ -1,0 +1,48 @@
+button{
+  font-size: 25px;
+}
+
+label{
+  font-size: 20px;
+}
+
+.container_item{
+  margin-bottom: 3%;
+}
+
+.container_item_inp{
+  height: 70%;
+}
+
+.main_part{
+  width: 100%;
+  display: flex;
+}
+
+.body{
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 10%;
+  margin-bottom: 9%;
+  align-items: center;
+  border: 2px dashed;
+  background-color: white;
+  padding: 1%;
+}
+.container{
+  display: grid;
+  grid-auto-columns: auto;
+  align-items: center;
+  text-align: left;
+}
+
+.button_group{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.submit_button{
+  margin-top: 5%;
+  font-weight: bold;
+}

@@ -1,0 +1,9 @@
+@counter-style meat {
+    system: fixed;
+    symbols: 🥙 🥙 🥙 🥙 🥙 🥙 🥙 🥙 🥙 🥙 🥙 🥙 🥙;
+    suffix: "";
+}
+
+ul{
+    list-style-type: meat;
+}

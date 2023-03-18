@@ -1,0 +1,9 @@
+@counter-style cookies {
+    system: fixed;
+    symbols: 🍪 🍪 🍪 🍪 🍪 🍪 🍪 🍪 🍪 🍪;
+    suffix: "";
+}
+
+ul{
+    list-style-type: cookies;
+}

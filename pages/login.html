@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" lang="ru">
+    <title>Лабораторная работа 1</title>
+    <link rel="stylesheet" href="../styles/style_log.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <h1 class="main-title"><a  href="main.html">Рецепты Машули</a> </h1>
+        <nav class="menu_top">
+            <form class="menu_link_top">
+                <input type="text" placeholder="Найти рецепт"></input>
+                <button class="menu_link_top button_search">
+                    <img class="button_search" src="../resources/img/search.png" title="Найти">
+                </button>
+            </form>
+            <a class="menu_link_top" href="../pages/login.html">
+                <img class="href_img" src="../resources/img/user.png" title="Вход">
+            </a>
+            <a class="menu_link_top" href="">
+                <img class="href_img" src="../resources/img/heart.png" title="Избранное">
+            </a>
+            <a class="menu_link_top" href="">
+                <img class="href_img" src="../resources/img/question.png" title="О нас">
+            </a>
+        </nav>
+    </div>
+    <hr class="hr_second">
+    <nav class="menu">
+        <div class="dropdown">
+            <button class="menu_link">Ингредиенты </button>
+                <div class="dropdown-content">
+                    <a href="#">Мясо</a>
+                    <a href="#">Курица</a>
+                    <a href="#">Рыба</a>
+                    <a href="#">Овощи</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <button class="menu_link">Варианты готовки</button>
+            <div class="dropdown-content">
+              <a href="#">Жарка</a>
+              <a href="#">Варка</a>
+              <a href="#">Тушение</a>
+            </div>
+          </div>
+        <button class="menu_link">Прием пищи</button>
+        <button class="menu_link">Праздники</button>
+        <button class="menu_link">Здоровое питание</button>
+        <button class="menu_link">
+            <a href=""></a><b>Кофе</b></button>
+    </nav>
+    <hr class="hr_first">
+    <div class="main_part">
+    <div class="body">
+        <div class="container">
+            <label class="container_item" for="uname"><b>Логин</b></label>
+            <input class="container_item container_item_inp" type="email" placeholder="Введи почту" name="uname" required>
+            <label class="container_item" for="psw"><b>Пароль</b></label>
+            <input class="container_item container_item_inp" type="password" placeholder="Введи пароль" name="psw" required>
+            <div class="container_item button_group">
+                <button class="submit_button" type="submit">Войти</button>
+                <button class="submit_button" type="submit">Зарегистрироваться</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <footer>
+        <p>@ 2023 Masha's corp.</p>
+        <div class="footer_vk">
+            <button href="https://vk.com/modesthedgehog">
+                <img src="../resources/img/vk.png">
+            </button>
+            <div>
+                <a href="https://vk.com/modesthedgehog">Машулин ВК</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

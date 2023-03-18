@@ -1,0 +1,48 @@
+.main_info{
+  max-width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5%;
+  margin: 2%;
+  margin-bottom: -8%;
+}
+
+.masha img{
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.masha{
+  max-width: 30%;
+  display: initial;
+}
+
+.masha p{
+  margin-top: 0%;
+  text-align: center;
+}
+
+.masha video{
+  max-width: 60%;
+  /* max-height: 50%; */
+  margin-left: 18%;
+}
+
+.tigers{
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
+
+.tigers img{
+  max-width: 18%;
+}
+
+.input_and_submit{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 12pt;
+}
