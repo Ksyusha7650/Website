@@ -19,12 +19,12 @@
     <div class="body">
         <div class="container">
             <label class="container_item"><b>Логин</b></label>
-            <input class="container_item container_item_inp" type="email" placeholder="Введи почту" name="uname" required>
+            <input id="email_input" class="container_item container_item_inp" type="email" placeholder="Введи почту" name="uname" required>
             <label class="container_item"><b>Пароль</b></label>
-            <input class="container_item container_item_inp" type="password" placeholder="Введи пароль" name="psw" required>
+            <input id = "password_input" class="container_item container_item_inp" type="password" placeholder="Введи пароль" name="psw" required>
             <div class="container_item button_group">
-                <button class="submit_button" type="submit">Войти</button>
-                <button class="submit_button" type="submit">Зарегистрироваться</button>
+                <button id = "enter" class="submit_button" type="submit">Войти</button>
+                <button id = "register" class="submit_button" type="submit">Зарегистрироваться</button>
             </div>
         </div>
         </div>
@@ -40,6 +40,7 @@
             </div>
         </div>
     </footer>
+<script src="../scripts/login.js"></script>
 </body>
 
 </html>
