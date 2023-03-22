@@ -1,6 +1,6 @@
 body{
   background-color: white;
-  font-family: 'Noto Sans';
+  font-family: 'Noto Sans', sans-serif;
   color: #111111;
 }
 
@@ -150,10 +150,14 @@ a{
   font-size: 45px;
 }
 
-.sentance{
-  display: inline;
-  gap: 3%;
+.sentence{
+  display: flex;
+  gap:0 3%;
   margin-right: 1%;
+}
+
+.sentence p{
+  margin: 1.5% 0;
 }
 
 .empty{

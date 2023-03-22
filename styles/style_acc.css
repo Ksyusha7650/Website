@@ -1,0 +1,88 @@
+.main_page{
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2.5%;
+}
+
+.acc_info{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 5%;
+}
+
+.acc_img {
+    width: 100%;
+    display: block;
+    background: #eaefef;
+}
+
+.acc_picture button{
+    text-align: center;
+    margin-top: 3%;
+    font-size: 13pt;
+    width: 100%;
+}
+
+.acc_picture{
+    margin: auto;
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.acc_name{
+    display: flex;
+    column-gap: 2%;
+    justify-content: center;
+}
+
+.acc_top{
+    width: 70%;
+    text-align: center;
+
+}
+
+.acc_description{
+    display: grid;
+}
+
+.acc_description p{
+    text-align: justify;
+}
+
+.custom-file-input {
+    color: transparent;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 15pt;
+}
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+}
+.custom-file-input::before {
+    content: 'Выбери файл';
+    color: black;
+    display: inline-block;
+    background: transparent;
+    border: 1px dot-dot-dash #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+.custom-file-input:hover::before {
+    border-color: black;
+}
+.custom-file-input:active {
+    outline: 0;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
