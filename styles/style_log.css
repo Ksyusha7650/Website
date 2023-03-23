@@ -20,10 +20,7 @@ label{
 }
 
 .body{
-  margin-left: 35%;
-  margin-right: 35%;
-  margin-top: 10%;
-  margin-bottom: 9%;
+  margin: 10% 35% 9%;
   align-items: center;
   border: 2px dashed;
   background-color: white;
@@ -45,4 +42,9 @@ label{
 .submit_button{
   margin-top: 5%;
   font-weight: bold;
+}
+
+#result{
+  color: #ef160d;
+  text-align: center;
 }

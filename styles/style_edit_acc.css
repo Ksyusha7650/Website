@@ -1,0 +1,24 @@
+.date_input{
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+}
+
+.acc_name input{
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.acc_name{
+    align-items: baseline;
+    margin-bottom: 3%;
+}
+
+input{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+input[type="checkbox"]{
+    cursor: pointer;
+}

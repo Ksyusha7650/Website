@@ -11,12 +11,18 @@ $("#enter").click(function() {
         password.css("border-color", "red");
         return;
     }
+    var res = $("#result");
     if (validateEmail(login.val())) {
-        if (login.val() === "a@a.com" && password.val() === "123")
-            alert("Вход успешен!");
-        else alert("Такой аккаун не найден!")
+        if (login.val() === "masha@a.com" && password.val() === "123"){
+            res.css("color", "black")
+            res.html("Входим...")
+            setTimeout(function(){
+                open("account.html", "_self")
+            }, 2000);
+        }
+        else res.html("Логин или пароль некорректны.")
     }
-    else alert("Некорректные данные, повторите ввод!")
+    else res.html("Почта некорректна.")
 });
 
 $("#register").click(function() {
