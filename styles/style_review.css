@@ -3,6 +3,7 @@
     width: 100%;
     max-width: 100%;
     margin: 3% 0;
+    display: grid;
 }
 
 .acc img {
@@ -22,6 +23,7 @@
     border: none;
     font-family: 'Noto Sans', sans-serif;
     resize: none;
+    margin-top: 1%;
 }
 
 .reactions {
