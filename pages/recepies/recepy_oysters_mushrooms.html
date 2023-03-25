@@ -8,6 +8,7 @@
 	<link href="../../styles/style.css" rel="stylesheet">
 	<link href="../../styles/style_recipe.css" rel="stylesheet">
 	<link href="../../styles/style_mushroom.css" rel="stylesheet">
+	<link href="../../styles/style_review.css" rel="stylesheet">
 	<style>
       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 	</style>
@@ -27,10 +28,7 @@
 				<p>3.4</p>
 			</div>
 			<button>
-				<div class="hearts">
-					<img class="favourite" src="../../resources/img/heart.png">
-					<img class="favourite_filled" src="../../resources/img/heart_filled.png">
-				</div>
+				<img class="favourite" id="unchecked" src="../../resources/img/heart.png">
 			</button>
 		</div>
 	</div>
@@ -41,9 +39,9 @@
 		</div>
 		<div class="start">
 			<p>Предлагаю вашему вниманию быстрый рецепт вешенок с ароматной заправкой - очень простое блюдо, с которым без
-			   труда справится даже новичок.
-			   Несмотря на то, что это очень вкусно, грибы вешенки являются одним из самых богатых источников цинка,
-			   который способствует поддержанию иммунитета</p>
+				 труда справится даже новичок.
+				 Несмотря на то, что это очень вкусно, грибы вешенки являются одним из самых богатых источников цинка,
+				 который способствует поддержанию иммунитета</p>
 			<h2 style="text-align: justify;">Нам понадобятся следующие ингредиенты: </h2>
 			<div class="ingredients">
 				<ul>
@@ -61,9 +59,10 @@
 	</div>
 	<div class="ingredients">
 		<p> Итак, приступим!</p>
-		<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="500px"
-		        src="https://youtu.be/zZo_T8NTiks"
-		        title="Рыбный суп в хлебе" width="100%">
+		<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen="" frameborder="0" height="500px"
+						src="https://youtu.be/zZo_T8NTiks"
+						title="Рыбный суп в хлебе" width="100%">
 		</iframe>
 		<ol>
 			<li>Отрезаем стебли петрушки и максимально мелко рубим листья.</li>
@@ -92,13 +91,15 @@
 				</div>
 			</div>
 			<div class="send_review">
-				<textarea class="review" rows="5" type="text"></textarea>
-				<button>Отправить отзыв</button>
+				<textarea class="review" id="review" rows="5" type="text"></textarea>
+				<button id="button_send_review">Отправить отзыв</button>
 			</div>
+			<div id="reviews"></div>
 		</div>
 	</div>
 </div>
-</div>
 </body>
+<script src="../../scripts/add_review.js"></script>
+<script src="../../scripts/add_favourite.js"></script>
 <footer></footer>
 </html>

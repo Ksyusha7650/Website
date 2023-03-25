@@ -7,6 +7,7 @@
 	<title>Лабораторная работа 1</title>
 	<link href="../../styles/style.css" rel="stylesheet">
 	<link href="../../styles/style_recipe.css" rel="stylesheet">
+	<link href="../../styles/style_review.css" rel="stylesheet">
 	<style>
       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 	</style>
@@ -26,10 +27,7 @@
 				<p>5.0</p>
 			</div>
 			<button>
-				<div class="hearts">
-					<img class="favourite" src="../../resources/img/heart.png">
-					<img class="favourite_filled" src="../../resources/img/heart_filled.png">
-				</div>
+				<img class="favourite" id="unchecked" src="../../resources/img/heart.png">
 			</button>
 		</div>
 	</div>
@@ -49,7 +47,7 @@
 					<li>Посыпка/сироп/сахар - по желанию <input type="checkbox"/></li>
 				</ul>
 				<p> (Мы будем готовить с помощью кофе-машины, но можно конечно и без нее обойтись)</p>
-			
+
 			</div>
 			<hr class="hr_first">
 		</div>
@@ -74,12 +72,15 @@
 				</div>
 			</div>
 			<div class="send_review">
-				<textarea class="review" rows="5" type="text"></textarea>
-				<button>Отправить отзыв</button>
+				<textarea class="review" id="review" rows="5" type="text"></textarea>
+				<button id="button_send_review">Отправить отзыв</button>
 			</div>
+			<div id="reviews"></div>
 		</div>
 	</div>
 </div>
 </body>
+<script src="../../scripts/add_review.js"></script>
+<script src="../../scripts/add_favourite.js"></script>
 <footer></footer>
 </html>

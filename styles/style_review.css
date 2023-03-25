@@ -34,3 +34,9 @@
 .reactions img {
     height: 15px;
 }
+
+.star_rank{
+    margin-left: 2%;
+    width: fit-content;
+    display: flow-root;
+}

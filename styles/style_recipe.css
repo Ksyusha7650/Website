@@ -12,21 +12,21 @@
     justify-content: center;
 }
 
-.meal p{
-  margin-top: 0%;
-  text-align: center;
+.meal p {
+    margin-top: 0%;
+    text-align: center;
 }
 
-li{
+li {
     font-size: 16px;
     margin-bottom: 1%;
 }
 
-ol{
-  margin: 1%;
+ol {
+    margin: 1%;
 }
 
-ul{
+ul {
     font-size: 16px;
     list-style-type: coffee_ingredients;
 }
@@ -37,25 +37,22 @@ ul{
     suffix: " ";
 }
 
-.recipe{
+.recipe {
     max-width: 70%;
     display: grid;
     justify-content: flex-start;
     gap: 1.5%;
-    margin-top: 2%;
-    margin-right: 15%;
-    margin-left: 15%;
-    margin-bottom: 5%;
+    margin: 2% 15% 5%;
     align-items: center;
     text-align: justify;
-  }
+}
 
-  .start{
+.start {
     text-align: justify;
-    max-width: 80%;
-  }
+    max-width: 100%;
+}
 
-  .ingredients {
+.ingredients {
     display: grid;
     margin-top: 0;
     margin-bottom: 0;
@@ -63,128 +60,94 @@ ul{
 }
 
 .row {
-  margin-left: -16px;
-  margin-right: -16px;
-  display: flex;
-  justify-content: space-evenly;
+    margin-left: -16px;
+    margin-right: -16px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.row img{
-  max-width: 95%;
+.row img {
+    max-width: 95%;
 }
 
-textarea{
-  font-size: 12pt;
-  text-align: start;
+textarea {
+    font-size: 12pt;
+    text-align: start;
 }
 
-.hearts{
-  position: relative;
+.hearts {
+    position: relative;
 }
 
-.favourite{
-  display: block;
-}
-
-.favourite, .favourite_filled{
-  max-width: 30%;
-}
-
-.favourite_filled{
-  display: none;
-}
-
-.favourite:hover{
-  display: none;
-}
-
- body:has(.favourite:hover) .favourite_filled{
-  display: block;
+.favourite {
+    max-width: 30%;
 }
 
 
-.right_part{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.score{
-  width: 70%;
-  display: flex;
-  justify-content: space-between;
+body:has(.favourite:hover) .favourite_filled {
+    display: block;
 }
 
 
-.score-box, .title{
-  max-width: 100%;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+.right_part {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.score {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.score-box, .title {
+    max-width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 .score-box {
-  width: 20%;
-  align-items: center;
-  margin-left: 2%;
-  text-align: center;
-  display: flex;
-  justify-content: space-evenly;
-  margin-bottom: 5%;
-  height: 100%;
+    width: 20%;
+    align-items: center;
+    margin-left: 2%;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    height: 100%;
 }
 
 .star {
-    --bg: url(../resources/img/star.png) no-repeat;
     max-width: 20%;
     width: 20%;
     cursor: pointer;
-    background: var(--bg);
+    background: url(../resources/img/star.png) no-repeat;
     height: 50%;
 }
 
-.star:hover{
-  --bg: url("../resources/img/star_filled.png") no-repeat;
-}
-
-body:has(.score_2:hover) .score_1 {
-  --bg: url("../resources/img/star_filled.png") no-repeat;
-}
-
-body:has(.score_3:hover) .score_1, body:has(.score_3:hover) .score_2 {
-  --bg: url("../resources/img/star_filled.png") no-repeat;
-}
-
-body:has(.score_4:hover) .score_1, body:has(.score_4:hover) .score_2,
- body:has(.score_4:hover) .score_3  {
-  --bg: url("../resources/img/star_filled.png") no-repeat;
-}
-
-body:has(.score_5:hover) .score_1, body:has(.score_5:hover) .score_2, 
-body:has(.score_5:hover) .score_3, body:has(.score_5:hover) .score_4 {
-  --bg: url("../resources/img/star_filled.png") no-repeat;
-}
-
-.scores{
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
+.scores {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .rank {
-  width: 100%;
-  display: grid;
-  margin-bottom: 10%;
-  margin-top: 2%;
+    width: 100%;
+    display: grid;
+    margin-bottom: 10%;
+    margin-top: 2%;
 }
 
-.review{
-  width: 70%;
+.review {
+    width: 70%;
 }
 
-.send_review{
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 2%;
+.send_review {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 2%;
 }

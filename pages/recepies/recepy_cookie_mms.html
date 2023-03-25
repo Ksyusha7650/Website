@@ -8,6 +8,7 @@
 	<link href="../../styles/style.css" rel="stylesheet">
 	<link href="../../styles/style_recipe.css" rel="stylesheet">
 	<link href="../../styles/style_cookie.css" rel="stylesheet">
+	<link href="../../styles/style_review.css" rel="stylesheet">
 	<style>
       @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 	</style>
@@ -27,10 +28,7 @@
 				<p>4.8</p>
 			</div>
 			<button>
-				<div class="hearts">
-					<img class="favourite" src="../../resources/img/heart.png">
-					<img class="favourite_filled" src="../../resources/img/heart_filled.png">
-				</div>
+				<img class="favourite" id="unchecked" src="../../resources/img/heart.png">
 			</button>
 		</div>
 	</div>
@@ -40,7 +38,7 @@
 		</div>
 		<div class="start">
 			<p> Если вы хотите удивить своих близких и гостей ярким печеньем, то печенье с M&M's — для вас! Приготовить его
-			    очень просто и быстро, но получается оно невероятно красивым и оригинальным.
+					очень просто и быстро, но получается оно невероятно красивым и оригинальным.
 			</p>
 			<h2 style="text-align: justify;">Вот, что нам понадобится: </h2>
 			<div class="ingredients">
@@ -61,14 +59,14 @@
 		<p> Итак, приступим!</p>
 		<ol>
 			<li>60 грамм сливочного масла доведите до кипения и дайте ему покипеть, чтобы выпарилась лишняя влага. Затем
-			    снимите масло с огня и добавьте остальные 60 грамм масла. Растопите его и слегка охладите смесь.
+					снимите масло с огня и добавьте остальные 60 грамм масла. Растопите его и слегка охладите смесь.
 			</li>
 			<li>Добавьте к нему весь сахар и начните взбивать на небольшой скорости. Добавьте яйцо и слегка взбейте миксером.
-			    Муку просейте и добавьте к ней разрыхлитель и соль.
+					Муку просейте и добавьте к ней разрыхлитель и соль.
 			</li>
 			<li>Смешайте сухие и жидкие ингредиенты. Добавьте конфеты и хорошо перемешайте. Смазанными растительным маслом
-			    руками сформируйте печенье, выложите его на застеленный пергаментной бумагой противень и сверху украсьте
-			    конфетами.
+					руками сформируйте печенье, выложите его на застеленный пергаментной бумагой противень и сверху украсьте
+					конфетами.
 			</li>
 			<li>Выпекайте в разогретой до 180 градусов духовке в течение 8-10 минут.</li>
 		</ol>
@@ -80,7 +78,7 @@
 			</div>
 			<div class="col-md-3 col-sm-4 col-xs-6">
 				<img data-fancybox="small-gallery" height="500px" src="../../resources/img/cookies_mms-1.jpg"
-				     target="_blank" title="Готовое печенье">
+						 target="_blank" title="Готовое печенье">
 			</div>
 		</div>
 		<div class="rank">
@@ -95,13 +93,15 @@
 				</div>
 			</div>
 			<div class="send_review">
-				<textarea class="review" rows="5" type="text"></textarea>
-				<button>Отправить отзыв</button>
+				<textarea class="review" id="review" rows="5" type="text"></textarea>
+				<button id="button_send_review">Отправить отзыв</button>
 			</div>
+			<div id="reviews"></div>
 		</div>
 	</div>
 </div>
-</div>
 </body>
+<script src="../../scripts/add_review.js"></script>
+<script src="../../scripts/add_favourite.js"></script>
 <footer></footer>
 </html>
