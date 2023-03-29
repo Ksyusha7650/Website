@@ -12,8 +12,8 @@ $("#register").click(function () {
         return;
     }
     if (validateEmail(login.val())){
-        alert("Зарегистрирован!")
-        all()
+        var name = "Лева"
+        register(name, login.val(), password.val())
     }
     else alert("Некорректные данные, повторите ввод!")
 });
@@ -23,40 +23,20 @@ function validateEmail($email) {
     return emailReg.test($email);
 }
 
-function all()
-{
-    // Ajax config
+function register($name, $login, $password) {
     $.ajax({
         type: "POST",
-        url: 'save_to_db.php',
-        success: function (response) {//once the request successfully process to the server side it will return result here
+        url: '../php/save_to_db.php',
+        data: {"name_acc": $name, "login_acc": $login, "password_acc": $password},
+        dataType : 'json'
+    })
+        .done(function (data) {
+            var response = JSON.parse(data)
 
-            // Parse the json result
-            response = JSON.parse(response);
-
-            var html = "";
-            // Check if there is available records
-            if(response.length) {
-                html += '<div class="list-group">';
-                // Loop the parsed JSON
-                $.each(response, function(key,value) {
-                    // Our employee list template
-                    html += '<a href="#" class="list-group-item list-group-item-action">';
-                    html += "<p>" + value.first_name +' '+ value.last_name + " <span class='list-email'>(" + value.email + ")</span>" + "</p>";
-                    html += "<p class='list-address'>" + value.address + "</p>";
-                    html += '</a>';
-                });
-                html += '</div>';
+            if (response === 1) {
+                alert("Зарегистрирован!")
             } else {
-                html += '<div class="alert alert-warning">';
-                html += 'No records found!';
-                html += '</div>';
+                alert("Произошла ошибка!");
             }
-
-
-
-            // Insert the HTML Template and display all employee records
-            $("#employees-list").html(html);
-        }
-    });
-}
+        });
+    }
