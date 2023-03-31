@@ -26,14 +26,13 @@ function validateEmail($email) {
 function register($name, $login, $password) {
     $.ajax({
         type: "POST",
-        url: '../php/save_to_db.php',
-        data: {"name_acc": $name, "login_acc": $login, "password_acc": $password},
-        dataType : 'json'
+        url: "../php/save_to_db.php",
+        data: {name_acc: $name, login_acc: $login, password_acc: $password},
     })
         .done(function (data) {
-            var response = JSON.parse(data)
+            var response = data
 
-            if (response === 1) {
+            if (response === "Соединение установлено успешно") {
                 alert("Зарегистрирован!")
             } else {
                 alert("Произошла ошибка!");

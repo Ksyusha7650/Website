@@ -14,9 +14,11 @@
 }
 
 .acc_img {
-    width: 100%;
+    width: 200px;
+    height: 200px;
     display: block;
-    background: #eaefef;
+    border: 1px dashed black;
+    margin-left: 13%;
 }
 
 .acc_picture button{

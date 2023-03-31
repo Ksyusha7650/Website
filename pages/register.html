@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" lang="ru">
+    <title>Лабораторная работа 1</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style_main.css">
+    <link rel="stylesheet" href="../styles/style_acc.css">
+    <link rel="stylesheet" href="../styles/style_edit_acc.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../scripts/auto_add.js"></script>
+    <script src="../scripts/main.js"></script>
+</head>
+<body>
+<div id = "head_site"></div>
+<div class="main_page">
+    <h1>Введи данные:</h1>
+    <div class="acc_info">
+        <div class="acc_picture">
+            <img class="acc_img">
+            <input type="file" id="input_file" onchange="SetPhoto()" class="custom-file-input"
+                   style=" width: 40%">
+        </div>
+
+        <div class="acc_top">
+            <div class="acc_description">
+                 <span class="sentence">
+                <label for="acc_name"><b>Имя:</b></label>
+                <input id="acc_name" value="">
+                 </span>
+                <span class="sentence">
+                        <p><b>Пол:</b></p>
+                        <label> ж
+                            <input type="checkbox" id="is_female_acc">
+                        </label>
+                        <label> м
+                            <input type="checkbox" id="is_male_acc">
+                        </label>
+                    </span>
+                <span class="sentence">
+                        <p><b>Дата рождения:</b></p>
+                        <input id="date_input" type="date" class="date_input">
+                    </span>
+                <span class="sentence">
+                        <p><b>Страна:</b></p>
+                        <input id="country" type="text">
+                    </span>
+                <span class="sentence">
+                        <p><b>Город:</b></p>
+                        <input id="city" type="text">
+                    </span>
+            </div>
+            <button id="save" style="font-size: 20px">
+                <b>Подтвердить</b>
+            </button>
+        </div>
+    </div>
+</div>
+<script src="../scripts/account.js"></script>
+<script src="../scripts/account_edit.js"></script>
+</body>
+<footer></footer>
+</html>

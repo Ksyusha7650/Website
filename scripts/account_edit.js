@@ -1,15 +1,14 @@
-/*function SetPhoto() {
-    alert("зашли")
+function SetPhoto() {
     var selectedFile = $('#input_file').get(0).files[0]
-    var img = $('#acc_img').get()
+    var img = $(".acc_img")
     var url = window.URL.createObjectURL(selectedFile)
     window.URL.revokeObjectURL(url)
     img.attr('src', url)
-};*/
-function SetPhoto() {
+};
+/*function SetPhoto() {
     var formData = new FormData();
     formData.append('file', $("#input_file")[0].files[0]);
-}
+}*/
 
 $('input[type="checkbox"]').on('change', function() {
     $('input[type="checkbox"]').not(this).prop('checked', false);
