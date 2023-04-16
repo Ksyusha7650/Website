@@ -29,16 +29,33 @@
 }
 
 .acc_picture{
-    margin: auto;
     display: inline-block;
-    width: 30%;
+    width: 20%;
     text-align: center;
+    margin: auto auto auto 10%;
+}
+
+.acc_picture form{
+    width: 70%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    border: none;
+}
+
+.acc_picture form > input{
+    width: 70%;
+}
+
+.acc_picture form > button{
+    width: 30%;
 }
 
 .acc_name{
     display: flex;
     column-gap: 2%;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .acc_top{

@@ -1,68 +1,67 @@
 <!DOCTYPE html>
 <head>
-    <meta charset="UTF-8" lang="ru">
-    <title>Лабораторная работа 1</title>
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/style_main.css">
-    <link rel="stylesheet" href="../styles/style_acc.css">
-    <link rel="stylesheet" href="../styles/style_edit_acc.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="../scripts/auto_add.js"></script>
-    <script src="../scripts/main.js"></script>
+  <meta charset="UTF-8" lang="ru">
+  <title>Лабораторная работа 1</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/style_main.css">
+  <link rel="stylesheet" href="../styles/style_acc.css">
+  <link rel="stylesheet" href="../styles/style_edit_acc.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../scripts/auto_add.js"></script>
+  <script src="../scripts/main.js"></script>
 </head>
 <body>
-<div id = "head_site"></div>
-    <div class="main_page">
-        <div class="acc_info">
-            <div class="acc_picture">
-                <img class="acc_img" src="../resources/img/tigers/masha.jpg">
-                <input type="file" id="input_file" onchange="SetPhoto()" class="custom-file-input"
-                       style="margin-left: 5%; width: 40%">
-            </div>
-            <form action="../php/upload.php" method="post" enctype="multipart/form-data">
-                Select image to upload:
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <input type="submit" value="Upload Image" name="submit">
-            </form>
-            <div class="acc_top">
-                <div class="acc_name">
-                    <input id="acc_name" value="Машка">
-                    <button id="save">
-                        Сохранить
-                    </button>
-                </div>
-                <div class="acc_description">
-                    <span class="sentence">
-                        <p><b>Зарегистрирован:</b></p>
-                        <p>20.03.2023 12:24</p>
-                    </span>
-                    <span class="sentence">
-                        <p><b>Пол:</b></p>
-                        <label> ж
-                            <input type="checkbox" checked id="is_female_acc">
-                        </label>
-                        <label> м
-                            <input type="checkbox" id="is_male_acc" value="is_male">
-                        </label>
-                    </span>
-                    <span class="sentence">
-                        <p><b>Дата рождения:</b></p>
-                        <input id="date_input" type="date" class="date_input" value="2002-04-04">
-                    </span>
-                    <span class="sentence">
-                        <p><b>Страна:</b></p>
-                        <input id="country" type="text" value="Россия">
-                    </span>
-                    <span class="sentence">
-                        <p><b>Город:</b></p>
-                        <input id="city" type="text" value="Санкт-Петербург">
-                    </span>
-                </div>
-            </div>
+<div id="head_site"></div>
+<div class="acc_info">
+  <div class="acc_picture">
+    <img class="acc_img" src="../resources/img/tigers/masha.jpg">
+    <form id="choose_photo" enctype="multipart/form-data" >
+      <div>
+        <input id="files" type="file" name="image" accept="image/*"/>
+        <label for="files"></label>
+      </div>
+      <button type="submit" onclick="SetPhoto()">Загрузить</button>
+    </form>
+  </div>
+    <div class="acc_top">
+      <div class="acc_name">
+        <input id="acc_name" value="Машка">
+        <button id="save">
+          Сохранить
+        </button>
+      </div>
+        <div class="acc_description">
+          <span class="sentence">
+            <p><b>Зарегистрирован:</b></p>
+            <p>20.03.2023 12:24</p>
+          </span>
+          <span class="sentence">
+            <p><b>Пол:</b></p>
+            <label> ж
+              <input type="checkbox" checked id="is_female_acc">
+            </label>
+            <label> м
+              <input type="checkbox" id="is_male_acc" value="is_male">
+            </label>
+          </span>
+          <span class="sentence">
+            <p><b>Дата рождения:</b></p>
+            <input id="date_input" type="date" class="date_input" value="2002-04-04">
+          </span>
+          <span class="sentence">
+            <p><b>Страна:</b></p>
+            <input id="country" type="text" value="Россия">
+          </span>
+          <span class="sentence">
+            <p><b>Город:</b></p>
+            <input id="city" type="text" value="Санкт-Петербург">
+          </span>
         </div>
+      </div>
     </div>
-<script src="../scripts/account.js"></script>
-<script src="../scripts/account_edit.js"></script>
+    <script src="../scripts/account.js"></script>
+    <script src="../scripts/account_edit.js"></script>
+</div>
 </body>
 <footer></footer>
 </html>

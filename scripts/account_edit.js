@@ -1,14 +1,23 @@
 function SetPhoto() {
-    var selectedFile = $('#input_file').get(0).files[0]
-    var img = $(".acc_img")
-    var url = window.URL.createObjectURL(selectedFile)
-    window.URL.revokeObjectURL(url)
-    img.attr('src', url)
-};
-/*function SetPhoto() {
-    var formData = new FormData();
-    formData.append('file', $("#input_file")[0].files[0]);
-}*/
+    setTimeout(function (){}, 1000000)
+        var img = $(".acc_img")
+        var selectedFile = $('#files').get(0).files[0]
+        var path = "../php/uploads/" + selectedFile.name
+        img.attr('src', path)
+}
+
+/* Get from elements values */
+$("#choose_photo").on("submit", function(){
+    $.ajax({
+        url: '../php/upload.php',
+        method: 'post',
+        dataType: 'html',
+        data: $(this).serialize(),
+        success: function(data){
+            $('#message').html(data);
+        }
+    });
+});
 
 $('input[type="checkbox"]').on('change', function() {
     $('input[type="checkbox"]').not(this).prop('checked', false);
