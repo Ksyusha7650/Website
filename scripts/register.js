@@ -33,9 +33,20 @@ function register($name, $login, $password) {
             var response = data
 
             if (response === "Соединение установлено успешно") {
-                alert("Зарегистрирован!")
+                open("register.html", "_self")
             } else {
                 alert("Произошла ошибка!");
             }
         });
-    }
+}
+
+    $("#save").click( function () {
+        var name_acc = $("#acc_name").val()
+        var sex_acc = ( $("#is_female_acc").is(":checked")) ? "женский" : "мужской"
+        var date_acc = $("#date_input").val()
+        var country_acc = $("#country").val()
+        var city_acc = $("#city").val()
+        alert(name_acc +"\n" + sex_acc + "\n" + date_acc + "\n" + country_acc + "\n" + city_acc)
+
+        open("account.html", "_self")
+    })

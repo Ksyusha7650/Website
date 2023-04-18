@@ -13,9 +13,8 @@ $("#choose_photo").on("submit", function(){
         method: 'post',
         dataType: 'html',
         data: $(this).serialize(),
-        success: function(data){
-            $('#message').html(data);
-        }
+        success:
+            SetPhoto()
     });
 });
 
