@@ -17,17 +17,17 @@ from account_description
 where ID_acc = ?";
     $stmt = $link->prepare($sql);
     $stmt->bind_param('i', $id);
-    $row = $stmt->fetch();
-    print $row;
-
     if ($stmt->execute()) {
+            // output data of each row
+            $stmt->fetch();
+            $row = $stmt->get_result();
+            //print ("123");
+            print ("name: ". $row["name_acc"]. " - sex: ". $row["sex_acc"]. " " . $row["country"] . "");
+        print ("hdjdhj");
         $response = 1;
     }
     if ($response === 0) {
-        print ($register_date);
         print("Произошла ошибка при выполнении запроса");
-    } else {
-        print("Соединение установлено успешно");
     }
 }
 $link->close();
