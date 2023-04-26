@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" lang="ru">
+    <title>Лабораторная работа 1</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style_main.css">
+    <link rel="stylesheet" href="../styles/style_add_recipe.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../scripts/auto_add.js"></script>
+    <script src="../scripts/add_recipe.js"></script>
+</head>
+<body>
+    <div id = "head_site"></div>
+    <div class="center">
+    <h1>Добавление рецепта</h1>
+        <div class="block">
+    <div class="sentence">
+    <label>Тема:</label>
+        <input id="theme" type="text">
+    </div>
+    <label for="theme" class="hint">Укажите, к какой теме относится рецепт. Если нет подходящей темы, оставьте не заполненным</label>
+        </div>
+        <div class="block">
+    <div class="sentence">
+    <label>Название блюда:</label>
+        <input id="dish" type="text" aria-required="true">
+    </div>
+    <label for="dish" class="hint">Название блюда должно начинаться с большой буквы, а далее маленькими буквами. Точка в конце названия не ставится</label>
+        </div>
+        <div class="block">
+    <div class="sentence">
+    <label>Ингредиенты:</label>
+        <textarea id="ingredients_textarea"></textarea>
+    </div>
+<label for="ingredients_textarea" class="hint">
+    Каждый ингредиент вводите с новой строки и обязательно в таком порядке:
+    название ингредиента - количество</label>
+        </div>
+        <div class="block">
+    <div class="sentence">
+    <label>Описание блюда:</label>
+        <textarea id="dish_textarea" style="height: 300px"></textarea>
+    </div>
+    <label for="dish_textarea" class="hint">
+        Здесь надо максимально понятно описать процесс приготовления</label>
+    </div>
+        <button id="apply_button" style="text-align: right;" onclick="apply()">Подтвердить</button>
+    </div>
+    <div style="margin-bottom: 15%;"></div>
+</body>
+<footer></footer>
+</html>
