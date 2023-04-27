@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" lang="ru">
+    <title>Лабораторная работа 1</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/style_main.css">
+    <link rel="stylesheet" href="../styles/style_add_recipe.css">
+    <link rel="stylesheet" href="../styles/style_recipe_template.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../scripts/auto_add.js"></script>
+    <script src="../scripts/recipe_template.js"></script>
+</head>
+<body>
+    <div id = "head_site"></div>
+    <div class="center">
+    <h1 id="dish"></h1>
+        <p id="date"></p>
+        <div class="block">
+    <div class="sentence">
+    <label>Тема:</label>
+        <label id="theme"></label>
+    </div>
+        </div>
+        <div class="block">
+    <div class="sentence">
+    </div></div>
+        <div class="block">
+    <div class="sentence">
+    <label>Ингредиенты:</label>
+        <textarea id="ingredients_textarea" readonly></textarea>
+    </div>
+        </div>
+        <div class="block">
+    <div class="sentence">
+    <label>Описание блюда:</label>
+        <textarea id="dish_textarea" readonly></textarea>
+    </div>
+    </div>
+    </div>
+    <div style="margin-bottom: 15%;"></div>
+</body>
+<footer></footer>
+</html>

@@ -1,4 +1,4 @@
-var user = localStorage.getItem("user")
+var user = localStorage.getItem("id_account")
 $("#button_search").click(function() {
     alert("hm")
 })

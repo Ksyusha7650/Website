@@ -28,6 +28,5 @@ $("#save").click( function () {
     var date_acc = $("#date_input").val()
     var country_acc = $("#country").val()
     var city_acc = $("#city").val()
-    alert(name_acc +"\n" + sex_acc + "\n" + date_acc + "\n" + country_acc + "\n" + city_acc)
     open("login.html", "_self")
 })

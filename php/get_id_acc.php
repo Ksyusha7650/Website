@@ -5,21 +5,23 @@ $link = mysqli_connect("localhost",
     "04042002Mm!",
     "web_site_db");
 
-$id = $_GET['id_acc'];
+$login  = $_GET['login'];
+$password  = $_GET['password'];
 $response = 0;
 
-if ($link === false) {
+if ($link === false){
     print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
-} else {
-    $sql = "select name_acc, sex_acc, date_birth_acc, country_acc, city_acc, register_date
-from account_description
-where ID_acc = ?";
+}
+else {
+    $sql = "select id_acc 
+from accounts
+where login_acc = ? and password_acc = ?";
     $stmt = $link->prepare($sql);
-    $stmt->bind_param('i', $id);
+    $stmt->bind_param('ss', $login, $password);
     if(mysqli_stmt_execute($stmt)){
-        mysqli_stmt_bind_result($stmt, $col1, $col2, $col3, $col4, $col5, $col6);
+        mysqli_stmt_bind_result($stmt, $col1);
         while (mysqli_stmt_fetch($stmt)) {
-            printf("%s,%s,%s,%s,%s,%s\n", $col1, $col2, $col3, $col4, $col5, $col6);
+            printf("%s\n", $col1);
         }
         $response = 1;
     }

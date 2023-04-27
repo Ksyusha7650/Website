@@ -3,30 +3,34 @@ $("#edit_acc").click(function () {
 })
 
 $(window).on("load", function () {
-    id_acc = localStorage.getItem("id_acc");
-    getDataFromDB(0);
-    var name_acc = $("#acc_name").val()
-    var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
-    var date_acc = $("#date_input").val()
-    var country_acc = $("#country").val()
-    var city_acc = $("#city").val()
+    var id_acc = localStorage.getItem("id_account");
+    var name_acc = $("#acc_name_title")
+    var date_registration = $("#date_registration")
+    var sex_acc = $("#acc_sex")
+    var date_acc = $("#acc_date")
+    var country_acc = $("#acc_country")
+    var city_acc = $("#acc_city")
+    getDataFromDB(id_acc, name_acc, date_registration, sex_acc, date_acc, country_acc, city_acc);
 })
 
-var name_acc, sex_acc, date_acc, city_acc, registration_acc, id_acc
 
-function getDataFromDB($id) {
+function getDataFromDB($id, $name, $date_r, $sex, $date_a, $country, $city) {
     $.ajax({
         type: "GET",
         url: "../php/get_data_acc.php",
         data: {id_acc: $id},
     })
         .done(function (data) {
-            var response = data
-            if (response === "Произошла ошибка при выполнении запроса") {
+            if (data === "Произошла ошибка при выполнении запроса") {
                 alert("Произошла ошибка!");
             } else {
-                id_new_acc = response
-                open("register.html", "_self")
+                var array = data.split(',')
+                $name.text(array[0])
+                $sex.text(array[1])
+                $date_a.text(array[2])
+                $country.text(array[3])
+                $city.text(array[4])
+                $date_r.text(array[5])
             }
         });
 }

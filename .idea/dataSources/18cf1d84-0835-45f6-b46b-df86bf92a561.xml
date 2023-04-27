@@ -1236,26 +1236,36 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="334" parent="305" name="date_created">
-      <DasType>datetime|0s</DasType>
+    <column id="334" parent="305" name="dish_description">
+      <DasType>varchar(2500)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="335" parent="305" name="theme">
-      <DasType>varchar(50)|0s</DasType>
+    <column id="335" parent="305" name="date_created">
+      <DasType>datetime|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="336" parent="305" name="PRIMARY">
+    <column id="336" parent="305" name="theme">
+      <DasType>varchar(50)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <foreign-key id="337" parent="305" name="recipes_accounts_ID_acc_fk">
+      <ColNames>id_acc</ColNames>
+      <RefColNames>ID_acc</RefColNames>
+      <RefTableName>accounts</RefTableName>
+    </foreign-key>
+    <index id="338" parent="305" name="PRIMARY">
       <ColNames>id_recipe</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="337" parent="305" name="recipes_accounts_ID_acc_fk">
+    <index id="339" parent="305" name="recipes_accounts_ID_acc_fk">
       <ColNames>id_acc</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="338" parent="305" name="PRIMARY">
+    <key id="340" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

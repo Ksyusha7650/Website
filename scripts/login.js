@@ -13,12 +13,35 @@ $("#enter").click(function () {
     }
     var res = $("#result");
     if (validateEmail(login.val())) {
-        if (login.val() === "masha@a.com" && password.val() === "123") {
+        if (get_id_acc(login.val(), password.val())) {
             res.css("color", "black")
             res.html("Входим...")
             setTimeout(function () {
                 open("account.html", "_self")
             }, 2000);
-        } else res.html("Логин или пароль некорректны.")
-    } else res.html("Почта некорректна.")
+        } else res.html("Неправильный логин или пароль!")
+    } else res.html("Почта некорректна!")
 });
+
+function get_id_acc($login, $password){
+        $.ajax({
+            type: "GET",
+            url: "../php/get_id_acc.php",
+            data: {login: $login, password:$password},
+        })
+            .done(function (data) {
+                if (data === "Произошла ошибка при выполнении запроса") {
+                    alert("Произошла ошибка!")
+                    return false
+                }
+                else {
+                    if (data === "") {
+                        return false
+                    }
+                    else {
+                        localStorage.setItem("id_account", data)
+                        return true
+                    }
+                }
+            });
+}

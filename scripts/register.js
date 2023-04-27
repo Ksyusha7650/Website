@@ -29,15 +29,14 @@ function register($login, $password) {
         data: {login_acc: $login, password_acc: $password},
     })
         .done(function (data) {
-            var response = data
-            if (response === "Произошла ошибка при выполнении запроса") {
-                alert("Произошла ошибка!");
-            } else {
-                id_new_acc = response
-                open("register.html", "_self")
-            }
-        });
-}
+                if (data === "Произошла ошибка при выполнении запроса") {
+                    alert("Произошла ошибка!");
+                } else {
+                    localStorage.setItem("id_account", data)
+                    open("register.html", "_self")
+                }
+            });
+        }
 
     $("#save").click( function () {
         var name_acc = $("#acc_name").val()
@@ -49,22 +48,21 @@ function register($login, $password) {
         send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc)
     })
 
-$( "#date_input" ).datepicker({
-    dateFormat: "yyyy-mm-dd"
-});
+    $( "#date_input" ).datepicker({
+        dateFormat: "yyyy-mm-dd"
+    });
 
-function send_data_to_db($name, $sex, $date, $country, $city) {
-    $.ajax({
-        type: "POST",
-        url: "../php/save_to_db_description.php",
-        data: {id_acc: 1, name_acc: $name, sex_acc: $sex, date_birth_acc: $date,
-        country_acc: $country, city_acc: $city},
-    })
-        .done(function (data) {
+    function send_data_to_db($name, $sex, $date, $country, $city) {
+        $.ajax({
+            type: "POST",
+            url: "../php/save_to_db_description.php",
+            data: {id_acc: localStorage.getItem("id_account"), name_acc: $name, sex_acc: $sex, date_birth_acc: $date,
+                country_acc: $country, city_acc: $city},
+        })
+            .done(function (data) {
             if (data === "Произошла ошибка при выполнении запроса") {
                 alert("Произошла ошибка!");
             } else {
-                localStorage.setItem("id_acc", id_new_acc);
                 open("account.html", "_self")
             }
         });

@@ -5,21 +5,23 @@ $link = mysqli_connect("localhost",
     "04042002Mm!",
     "web_site_db");
 
-$id = $_GET['id_acc'];
+$id  = $_GET['id_recipe'];
 $response = 0;
 
-if ($link === false) {
+if ($link === false){
     print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
-} else {
-    $sql = "select name_acc, sex_acc, date_birth_acc, country_acc, city_acc, register_date
-from account_description
-where ID_acc = ?";
+}
+else {
+    $sql = "select ingredient_name, amount
+from ingredients i
+join ingredients_in_recipe r on i.id_ingredient = r.id_ingredient
+where id_recipe = ?;";
     $stmt = $link->prepare($sql);
     $stmt->bind_param('i', $id);
     if(mysqli_stmt_execute($stmt)){
-        mysqli_stmt_bind_result($stmt, $col1, $col2, $col3, $col4, $col5, $col6);
+        mysqli_stmt_bind_result($stmt, $col1, $col2);
         while (mysqli_stmt_fetch($stmt)) {
-            printf("%s,%s,%s,%s,%s,%s\n", $col1, $col2, $col3, $col4, $col5, $col6);
+            printf("%s %s\n", $col1, $col2);
         }
         $response = 1;
     }
