@@ -5,25 +5,22 @@ $link = mysqli_connect("localhost",
     "04042002Mm!",
     "web_site_db");
 
-$id  = $_POST['id_acc'];
-$name  = $_POST['dish_name'];
-$dish = $_POST['dish'];
-$date = date('Y-m-d H:i:s');;
-$theme = $_POST['theme'];
-
+$login  = $_GET['login'];
 $response = 0;
 
 if ($link === false){
     print("Ошибка: Невозможно подключиться к MySQL " . mysqli_connect_error());
 }
 else {
-    $sql = "insert into recipes (id_acc, recipe_name, date_created, theme, dish_description)
-values (?, ?, ?, ?, ?);";
+    $sql = "select ID_acc
+from accounts
+where login_acc = '" . $login . "'";
     $stmt = $link->prepare($sql);
-    $stmt->bind_param('issss', $id,$name, $date, $theme, $dish);
-    if($stmt->execute()){
-        $result = $link->insert_id;
-        print $result;
+    if(mysqli_stmt_execute($stmt)){
+        mysqli_stmt_bind_result($stmt, $col1);
+        while (mysqli_stmt_fetch($stmt)) {
+            printf("%s\n", $col1);
+        }
         $response = 1;
     }
     if ($response === 0) {

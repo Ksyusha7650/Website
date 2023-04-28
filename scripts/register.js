@@ -11,17 +11,38 @@ $("#register").click(function () {
         password.css("border-color", "red");
         return;
     }
-    if (validateEmail(login.val())){
-        register(login.val(), password.val())
-    }
-    else alert("Некорректные данные, повторите ввод!")
+    var res = $("#result");
+    if (validateEmail(login.val())) {
+        if (!register(login.val(), password.val())) {
+            res.html(`<p>Такой логин уже есть.</p>
+<button id="reset_button" onclick="reset_password()">Сбросить пароль?</button>`)
+        }
+    } else res.html("Почта некорректна!")
 });
+
+function reset_password() {
+    var login = $("[id='email_input']");
+        $.ajax({
+            type: "GET",
+            url: "../php/get_id_acc_by_login.php",
+            data: {login: login.val()},
+        })
+            .done(function (data) {
+                if (data === "Произошла ошибка при выполнении запроса") {
+                    alert("Произошла ошибка!")
+                    return false
+                }
+                else {
+                        localStorage.setItem("id_account", data)
+                        open("login_reset.html", "_self")
+                }
+            });
+}
 
 function validateEmail($email) {
     var emailReg = /^([\w-.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     return emailReg.test($email);
 }
-var id_new_acc = 0;
 function register($login, $password) {
     $.ajax({
         type: "POST",
@@ -31,9 +52,13 @@ function register($login, $password) {
         .done(function (data) {
                 if (data === "Произошла ошибка при выполнении запроса") {
                     alert("Произошла ошибка!");
-                } else {
+                } else if (data.toString().includes("login уже есть") === true ) {
+                    return false;
+                }
+                else{
                     localStorage.setItem("id_account", data)
                     open("register.html", "_self")
+                    return true;
                 }
             });
         }

@@ -6,6 +6,7 @@ function apply() {
     var ingredients = $("#ingredients_textarea").val()
     send_recipe_to_db(dish_name, dish, theme)
     send_ingredients_to_db(ingredients)
+    open("recipe_template.html", "_self")
 }
 
 function send_ingredients_to_db($ingredients) {
@@ -17,7 +18,7 @@ function send_ingredients_to_db($ingredients) {
         $.ajax({
             type: "POST",
             url: "../php/add_ingredients.php",
-            data: {id_acc: 1, ingredient_name: name, amount: amount},
+            data: {id_acc: localStorage.getItem("id_account"), ingredient_name: name, amount: amount},
         })
             .done(function (data) {
                 if (data === "Произошла ошибка при выполнении запроса") {
@@ -35,7 +36,7 @@ function send_recipe_to_db($name, $dish, $theme) {
     $.ajax({
         type: "POST",
         url: "../php/add_recipe.php",
-        data: {id_acc: 1, dish_name: $name, dish: $dish, theme: $theme},
+        data: {id_acc: localStorage.getItem("id_account"), dish_name: $name, dish: $dish, theme: $theme},
     })
         .done(function (data) {
             if (data === "Произошла ошибка при выполнении запроса") {

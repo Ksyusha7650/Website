@@ -34,3 +34,8 @@ function getDataFromDB($id, $name, $date_r, $sex, $date_a, $country, $city) {
             }
         });
 }
+
+$("#acc_exit").click(function () {
+    localStorage.clear()
+    open("login.html", "_self")
+})

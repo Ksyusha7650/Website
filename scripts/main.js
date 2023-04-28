@@ -10,14 +10,17 @@ $("#button_to_login").click(function() {
 })
 
 $('#button_to_favourite').click(function() {
-    open("favourites_empty.html", "_self")
+    if (user !== null)
+        open("favourites.html", "_self")
+    else
+        open("favourites_empty.html", "_self")
 })
 
-$('#button_to_add_recepy').click(function() {
+$('#button_to_add_recipe').click(function() {
     if (user !== null)
-        open("account.html", "_self")
+        open("add_recipe.html", "_self")
     else
-        open("add_recepy_empty.html", "_self")
+        open("add_recipe_empty.html", "_self")
 })
 $("#button_to_about_us").click(function() {
     open("about_us.html", "_self")

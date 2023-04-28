@@ -13,7 +13,7 @@ function get_ingredients($ingredients) {
         $.ajax({
             type: "GET",
             url: "../php/get_ingredients.php",
-            data: {id_recipe: 5},
+            data: {id_recipe: localStorage.getItem("id_recipe")},
         })
             .done(function (data) {
                 if (data === "Произошла ошибка при выполнении запроса") {
@@ -28,7 +28,7 @@ function get_recipe($name, $dish, $theme, $date) {
     $.ajax({
         type: "GET",
         url: "../php/get_recipe.php",
-        data: {id_recipe: 5},
+        data: {id_recipe: localStorage.getItem("id_recipe")},
     })
         .done(function (data) {
             if (data === "Произошла ошибка при выполнении запроса") {
