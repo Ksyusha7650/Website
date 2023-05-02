@@ -14,13 +14,12 @@
 <div id="head_site"></div>
 <div class="acc_info">
   <div class="acc_picture">
-    <img class="acc_img" src="../resources/img/tigers/masha.jpg">
+    <img id="acc_img" class="acc_img" src="../resources/img/tigers/masha.jpg">
     <form id="choose_photo" enctype="multipart/form-data" >
       <div>
-        <input id="files" type="file" name="image" accept="image/*"/>
+        <input id="files" type="file" name="image" accept="image/*" onchange="SetPhoto()"/>
         <label for="files"></label>
       </div>
-      <button type="submit">Загрузить</button>
     </form>
   </div>
     <div class="acc_top">

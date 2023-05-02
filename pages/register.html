@@ -16,13 +16,12 @@
     <h1>Введи данные:</h1>
     <div class="acc_info">
         <div class="acc_picture">
-          <img class="acc_img">
+          <img id="acc_img" class="acc_img">
           <form id="choose_photo" enctype="multipart/form-data" >
             <div>
-              <input id="files" type="file" name="image" accept="image/*"/>
+              <input id="files" type="file" name="image" accept="image/*" onchange="SetPhoto()"/>
               <label for="files"></label>
             </div>
-            <button type="submit">Загрузить</button>
           </form>
         </div>
 

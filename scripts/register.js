@@ -64,12 +64,14 @@ function register($login, $password) {
         }
 
     $("#save").click( function () {
+
+        var image_acc = send_photo_to_db()
+        if (image_acc === null) return
         var name_acc = $("#acc_name").val()
         var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
         var date_acc = $("#date_input").val()
         var country_acc = $("#country").val()
         var city_acc = $("#city").val()
-        //alert(name_acc +"\n" + sex_acc + "\n" + date_acc + "\n" + country_acc + "\n" + city_acc)
         send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc)
     })
 
@@ -91,4 +93,21 @@ function register($login, $password) {
                 open("account.html", "_self")
             }
         });
+}
+
+function SetPhoto() {
+    /*setTimeout(function (){}, 1000000)
+        var img = $(".acc_img")
+        var selectedFile = $('#files').get(0).files[0]
+        var path = "../php/uploads/" + selectedFile.name
+        img.attr('src', path)*/
+
+    var file = $("#files").files;
+    if (file.length > 0) {
+        var fileReader = new FileReader();
+        fileReader.onload = function (event) {
+            $("#acc_img").attr("src", event.target.result);
+        };
+        fileReader.readAsDataURL(file[0]);
+    }
 }

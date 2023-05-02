@@ -16,3 +16,4 @@ move_uploaded_file(
     // New image location, __DIR__ is the location of the current PHP file
     __DIR__ . "/uploads/" . $image_file["name"]
 );
+print(__DIR__ . "/uploads/" . $image_file["name"]);
