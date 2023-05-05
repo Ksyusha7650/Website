@@ -1,9 +1,9 @@
-function SetPhoto() {
-    /*setTimeout(function (){}, 1000000)
+/*function SetPhoto() {
+    /!*setTimeout(function (){}, 1000000)
         var img = $(".acc_img")
         var selectedFile = $('#files').get(0).files[0]
         var path = "../php/uploads/" + selectedFile.name
-        img.attr('src', path)*/
+        img.attr('src', path)*!/
 
     var file = $("#files").files;
     if (file.length > 0) {
@@ -13,7 +13,18 @@ function SetPhoto() {
         };
         fileReader.readAsDataURL(file[0]);
     }
+}*/
+function SetPhoto() {
+    var file = document.getElementById("files").files
+    if (file.length > 0) {
+        var fileReader = new FileReader()
+        fileReader.onload = function (event) {
+            $("#acc_img").attr("src", event.target.result)
+        }
+        fileReader.readAsDataURL(file[0])
+    }
 }
+
 
 /* Get from elements values */
 $("#choose_photo").on("submit", function(){

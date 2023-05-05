@@ -65,19 +65,34 @@ function register($login, $password) {
 
     $("#save").click( function () {
 
-        var image_acc = send_photo_to_db()
-        if (image_acc === null) return
-        var name_acc = $("#acc_name").val()
-        var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
-        var date_acc = $("#date_input").val()
-        var country_acc = $("#country").val()
-        var city_acc = $("#city").val()
-        send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc)
-    })
+    var image_acc = send_photo_to_db()
+    if (image_acc === null) return
+    var name_acc = $("#acc_name").val()
+    var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
+    var date_acc = $("#date_input").val()
+    var country_acc = $("#country").val()
+    var city_acc = $("#city").val()
+    send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc)
+})
 
-    $( "#date_input" ).datepicker({
-        dateFormat: "yyyy-mm-dd"
-    });
+$( "#date_input" ).datepicker({
+    dateFormat: "yyyy-mm-dd"
+});
+
+function send_photo_to_db() {
+    $.ajax({
+        url: '../php/upload.php',
+        method: 'post',
+        dataType: 'html',
+        data: $("#choose_photo").serialize(),})
+        .done(function (data) {
+            if (data === "Произошла ошибка при выполнении запроса") {
+                alert("Произошла ошибка!");
+            } else {
+                return data;
+            }
+        });
+}
 
     function send_data_to_db($name, $sex, $date, $country, $city) {
         $.ajax({
@@ -95,19 +110,13 @@ function register($login, $password) {
         });
 }
 
-function SetPhoto() {
-    /*setTimeout(function (){}, 1000000)
-        var img = $(".acc_img")
-        var selectedFile = $('#files').get(0).files[0]
-        var path = "../php/uploads/" + selectedFile.name
-        img.attr('src', path)*/
-
-    var file = $("#files").files;
+function SetPhoto(){
+    var file = document.getElementById("files").files
     if (file.length > 0) {
-        var fileReader = new FileReader();
+        var fileReader = new FileReader()
         fileReader.onload = function (event) {
-            $("#acc_img").attr("src", event.target.result);
-        };
-        fileReader.readAsDataURL(file[0]);
+            $("#acc_img").attr("src", event.target.result)
+        }
+        fileReader.readAsDataURL(file[0])
     }
 }
