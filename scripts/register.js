@@ -64,42 +64,28 @@ function register($login, $password) {
         }
 
     $("#save").click( function () {
-
-    var image_acc = send_photo_to_db()
-    if (image_acc === null) return
-    var name_acc = $("#acc_name").val()
-    var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
-    var date_acc = $("#date_input").val()
-    var country_acc = $("#country").val()
-    var city_acc = $("#city").val()
-    send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc)
+    uploadFile()
+    setTimeout(function () {
+        if (file_name === null) return
+        var name_acc = $("#acc_name").val()
+        var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
+        var date_acc = $("#date_input").val()
+        var country_acc = $("#country").val()
+        var city_acc = $("#city").val()
+        send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc, file_name)
+    }, 500)
 })
 
 $( "#date_input" ).datepicker({
     dateFormat: "yyyy-mm-dd"
 });
 
-function send_photo_to_db() {
-    $.ajax({
-        url: '../php/upload.php',
-        method: 'post',
-        dataType: 'html',
-        data: $("#choose_photo").serialize(),})
-        .done(function (data) {
-            if (data === "Произошла ошибка при выполнении запроса") {
-                alert("Произошла ошибка!");
-            } else {
-                return data;
-            }
-        });
-}
-
-    function send_data_to_db($name, $sex, $date, $country, $city) {
+    function send_data_to_db($name, $sex, $date, $country, $city, $image) {
         $.ajax({
             type: "POST",
             url: "../php/save_to_db_description.php",
             data: {id_acc: localStorage.getItem("id_account"), name_acc: $name, sex_acc: $sex, date_birth_acc: $date,
-                country_acc: $country, city_acc: $city},
+                country_acc: $country, city_acc: $city, image_acc: $image},
         })
             .done(function (data) {
             if (data === "Произошла ошибка при выполнении запроса") {
@@ -108,6 +94,36 @@ function send_photo_to_db() {
                 open("account.html", "_self")
             }
         });
+}
+var file_name;
+function uploadFile(){
+    var input = document.getElementById("files");
+    let file = input.files[0];
+    if(file !== undefined){
+        formData= new FormData();
+        if(!!file.type.match(/image.*/)){
+            formData.append("image", file);
+            $.ajax({
+                url: "../php/upload2.php",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(data){
+                    var result = "../uploads/" + file.name
+                    console.log(result)
+                    file_name = result
+                    return (result)
+                }
+            });
+        }else{
+            alert('Not a valid image!');
+            return ""
+        }
+    }else{
+        alert('Input something!');
+        return ""
+    }
 }
 
 function SetPhoto(){

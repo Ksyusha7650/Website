@@ -1,8 +1,11 @@
 <?php
 // Get reference to uploaded image
 
-$image_file = $_POST[$_FILES["image"]];
+/*$image_file = $_POST[$_FILES["files"]["id"]];*/
 
+$target_dir = "uploads/";
+$target_file = $target_dir . basename($_FILES["image"]["name"]);
+print($target_file);
 // Image not defined, let's exit
 if (!isset($image_file)) {
     die('No file uploaded.');

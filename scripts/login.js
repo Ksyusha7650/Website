@@ -13,34 +13,40 @@ $("#enter").click(function () {
     }
     var res = $("#result");
     if (validateEmail(login.val())) {
-        if (get_id_acc(login.val(), password.val())) {
-            res.css("color", "black")
-            res.html("Входим...")
+        get_id_acc(login.val(), password.val())
             setTimeout(function () {
-                open("account.html", "_self")
-            }, 2000);
-        } else res.html("Неправильный логин или пароль!")
+                if (result) {
+                    res.css("color", "black")
+                    res.html("Входим...")
+                    setTimeout(function () {
+                        open("account.html", "_self")
+                    }, 2000)
+                }
+                else res.html("Неправильный логин или пароль!")
+           }, 100);
     } else res.html("Почта некорректна!")
 });
 
+var result;
+
 function get_id_acc($login, $password){
-        $.ajax({
-            type: "GET",
-            url: "../php/get_id_acc.php",
-            data: {login: $login, password:$password},
-        })
-            .done(function (data) {
+    $.ajax({
+        type: "GET",
+        url: "../php/get_id_acc.php",
+        data: {login: $login, password:$password},
+    })
+        .done(function (data) {
                 if (data === "Произошла ошибка при выполнении запроса") {
                     alert("Произошла ошибка!")
-                    return false
+                    result = false
                 }
                 else {
                     if (data === "") {
-                        return false
+                        result = false
                     }
                     else {
                         localStorage.setItem("id_account", data)
-                        return true
+                        result = true
                     }
                 }
             });
