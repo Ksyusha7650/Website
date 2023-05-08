@@ -24,7 +24,7 @@
   </div>
     <div class="acc_top">
       <div class="acc_name">
-        <input id="acc_name" value="Машка">
+        <input id="acc_name_title" value="Машка">
         <button id="save">
           Сохранить
         </button>
@@ -32,33 +32,33 @@
         <div class="acc_description">
           <span class="sentence">
             <p><b>Зарегистрирован:</b></p>
-            <p>20.03.2023 12:24</p>
+            <p id="date_registration"></p>
           </span>
           <span class="sentence">
             <p><b>Пол:</b></p>
+            <span id="acc_sex"></span>
             <label> ж
-              <input type="checkbox" checked id="is_female_acc">
+              <input type="checkbox" id="is_female_acc">
             </label>
             <label> м
-              <input type="checkbox" id="is_male_acc" value="is_male">
+              <input type="checkbox" id="is_male_acc">
             </label>
           </span>
           <span class="sentence">
             <p><b>Дата рождения:</b></p>
-            <input id="date_input" type="date" class="date_input" value="2002-04-04">
+            <input id="acc_date" type="date" class="date_input">
           </span>
           <span class="sentence">
             <p><b>Страна:</b></p>
-            <input id="country" type="text" value="Россия">
+            <input id="acc_country" type="text">
           </span>
           <span class="sentence">
             <p><b>Город:</b></p>
-            <input id="city" type="text" value="Санкт-Петербург">
+            <input id="acc_city" type="text">
           </span>
         </div>
       </div>
     </div>
-    <script src="../scripts/account.js"></script>
     <script src="../scripts/account_edit.js"></script>
 </div>
 </body>

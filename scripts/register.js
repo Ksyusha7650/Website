@@ -64,15 +64,15 @@ function register($login, $password) {
         }
 
     $("#save").click( function () {
-    uploadFile()
-    setTimeout(function () {
-        if (file_name === null) return
-        var name_acc = $("#acc_name").val()
-        var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
-        var date_acc = $("#date_input").val()
-        var country_acc = $("#country").val()
-        var city_acc = $("#city").val()
-        send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc, file_name)
+        uploadFile()
+        setTimeout(function () {
+            if (file_name === null) file_name = "../uploads/default.jpg"
+            var name_acc = $("#acc_name").val()
+            var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
+            var date_acc = $("#date_input").val()
+            var country_acc = $("#country").val()
+            var city_acc = $("#city").val()
+            send_data_to_db(name_acc, sex_acc, date_acc, country_acc, city_acc, file_name)
     }, 500)
 })
 
