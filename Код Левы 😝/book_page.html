@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/book_page.css">
+	<title>Название книги</title>
+</head>
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="../js/rate.js"></script>
+<script src="../js/set_data_book.js"></script>
+<body>
+<div id="header"></div>
+  <div class="book-description-page">
+    <img id="picture_book" src="../img/for_book_page/griboedov_gore_ot_uma.jpeg" alt="griboedov_gore_ot_uma.jpeg">
+    <div class="text-description">
+      <h2 id="title_book">Горе от ума</h2>
+      <h4 id="description_book">«Горе от ума» – шедевр русской литературы, произведение, раздерганное на цитаты и крылатые фразы чуть не от
+        первого до последнего слова. Не потому ли горькая, язвительная и блестящая комедия Грибоедова по-прежнему
+        актуальна и по сей день не сходит с лучших театральных сцен нашей страны?</h4>
+    </div>
+    <div class="rate">
+      <input type="radio" id="star10" name="rate" value="10" onclick="rate_click(this)"/>
+      <label id="id_rate10" for="star10" title="text">10 stars</label>
+      <input type="radio" id="star9" name="rate" value="9" onclick="rate_click(this)"/>
+      <label id="id_rate9" for="star9" title="text">9 stars</label>
+      <input type="radio" id="star8" name="rate" value="8" onclick="rate_click(this)"/>
+      <label id="id_rate8" for="star8" title="text">8 stars</label>
+      <input type="radio" id="star7" name="rate" value="7" onclick="rate_click(this)"/>
+      <label id="id_rate7" for="star7" title="text">7 stars</label>
+      <input type="radio" id="star6" name="rate" value="6" onclick="rate_click(this)"/>
+      <label id="id_rate6" for="star6" title="text">6 stars</label>
+      <input type="radio" id="star5" name="rate" value="5" onclick="rate_click(this)"/>
+      <label id="id_rate5" for="star5" title="text">5 stars</label>
+      <input type="radio" id="star4" name="rate" value="4" onclick="rate_click(this)"/>
+      <label id="id_rate4" for="star4" title="text">4 stars</label>
+      <input type="radio" id="star3" name="rate" value="3" onclick="rate_click(this)"/>
+      <label id="id_rate3" for="star3" title="text">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" onclick="rate_click(this)"/>
+      <label id="id_rate2" for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" onclick="rate_click(this)"/>
+      <label id="id_rate1" for="star1" title="text">1 star</label>
+    </div>
+    <div>
+      <h2 id="rate_text" class="rate_text"> Your rating:&nbsp&nbsp&nbsp&nbsp</h2>
+      <button id="delete_button" class="delete_button" onclick="set_stars()">Удалить оценку</button>
+    </div>
+  </div>
+  <footer></footer>
+</body>
+<script src = "../js/add_header-footer.js"></script>
+
+</html>
