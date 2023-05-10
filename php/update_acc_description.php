@@ -24,6 +24,7 @@ $response = 0;
         $stmt->bind_param('ssssssi', $name, $sex, $date, $country, $city, $image, $id);
         if($stmt->execute()){
             $response = 1;
+            print($name);
         }
         if ($response === 0) {
             print("Произошла ошибка при выполнении запроса");

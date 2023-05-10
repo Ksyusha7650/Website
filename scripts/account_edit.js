@@ -59,7 +59,7 @@ function send_photo_to_db() {
 $("#save").click( function () {
     uploadFile()
     setTimeout(function () {
-        if (file_name === undefined) file_name = $("#image_acc").attr("src")
+        if (file_name === undefined) file_name = $("#acc_img").attr("src")
         var name_acc = $("#acc_name_title").val()
         var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
         var date_acc = $("#acc_date").val()
