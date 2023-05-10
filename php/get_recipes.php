@@ -20,7 +20,7 @@ where id_acc = ?;";
     if(mysqli_stmt_execute($stmt)){
         mysqli_stmt_bind_result($stmt, $col1, $col2, $col3, $col4);
         while (mysqli_stmt_fetch($stmt)) {
-            printf("%s,name: %s date created: %s theme: %s\n", $col1, $col2, $col3, $col4);
+            printf("%s,Название: %s (дата создания: %s; тема: %s)\n", $col1, $col2, $col3, $col4);
         }
         $response = 1;
     }

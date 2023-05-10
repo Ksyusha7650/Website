@@ -18,7 +18,7 @@ $('#button_to_favourite').click(function() {
 
 $('#button_to_add_recipe').click(function() {
     if (user !== null)
-        open("add_recipe.html", "_self")
+        open("recipes.html", "_self")
     else
         open("add_recipe_empty.html", "_self")
 })

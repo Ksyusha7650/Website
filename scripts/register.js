@@ -66,7 +66,7 @@ function register($login, $password) {
     $("#save").click( function () {
         uploadFile()
         setTimeout(function () {
-            if (file_name === null) file_name = "../uploads/default.jpg"
+            if (file_name === undefined) file_name = "../uploads/default.jpg"
             var name_acc = $("#acc_name").val()
             var sex_acc = ( $("#is_female_acc").is(":checked")) ? "ж" : "м"
             var date_acc = $("#date_input").val()
@@ -120,9 +120,6 @@ function uploadFile(){
             alert('Not a valid image!');
             return ""
         }
-    }else{
-        alert('Input something!');
-        return ""
     }
 }
 

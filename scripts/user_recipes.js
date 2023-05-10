@@ -1,10 +1,10 @@
 $(window).on("load", function () {
-    //setTimeout(get_favourites, 500)
+    get_recipes()
 
 })
 
 var array
-function get_favourites() {
+function get_recipes() {
     $.ajax({
         type:"GET",
         url: "../php/get_recipes.php",
@@ -21,11 +21,11 @@ function get_favourites() {
 }
 
 function set_list(){
-    var list = $("#favourites_list")
-    for (const el in array) {
-        var row = array[el].split(",")
+    var list = $("#recipes_list")
+    for (let i = 0; i < array.length - 1; i++) {
+        var row = array[i].split(",")
         var id = row[0]
-        list.append('<li> <a id='+id+' href="recipe_template.html" onclick="set_id('+id+')"></a></li>');
+        list.append('<li><a id='+id+' href="recipe_template.html" onclick="set_id('+id+')"></a></li>');
         $("#" + id).text(row[1])
     }
 }
@@ -33,3 +33,7 @@ function set_list(){
 function set_id($id) {
     localStorage.setItem("id_recipe", $id)
 }
+
+$("#add_recipe").click(function () {
+    open("add_recipe.html", "_self")
+})
