@@ -21,7 +21,7 @@ where id_recipe = ?;";
     if(mysqli_stmt_execute($stmt)){
         mysqli_stmt_bind_result($stmt, $col1, $col2);
         while (mysqli_stmt_fetch($stmt)) {
-            printf("%s %s\n", $col1, $col2);
+            printf("%s - %s\n", $col1, $col2);
         }
         $response = 1;
     }

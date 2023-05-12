@@ -1,8 +1,7 @@
 $(window).on("load", function () {
     get_recipes()
-
 })
-
+var button
 var array
 function get_recipes() {
     $.ajax({
@@ -34,6 +33,6 @@ function set_id($id) {
     localStorage.setItem("id_recipe", $id)
 }
 
-$("#add_recipe").click(function () {
+function open_add () {
     open("add_recipe.html", "_self")
-})
+}
